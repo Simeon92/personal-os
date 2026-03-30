@@ -4,35 +4,100 @@ A Personal Operating System for Claude Code. Compounds learning over time, track
 
 ---
 
-## Setup
+## Complete Beginner Setup
 
-**Requirements:** [Claude Code](https://claude.ai/code) installed. Claude Pro or higher recommended.
+Never used Claude before? Start here. This takes about 20 minutes.
 
-**Option A — Download (no git required):**
-Download the zip from GitHub, unzip it, open Terminal, drag the folder into Terminal to get the path, then:
+### Step 1 — Create a Claude account
+
+Go to [claude.ai](https://claude.ai) and sign up.
+
+You'll need a **Pro plan** ($20/month) at minimum. If you plan to use this system heavily every day, **Max plan** gives you more usage and is worth it.
+
+### Step 2 — Install Node.js
+
+Claude Code runs on Node.js. You need to install it first.
+
+1. Go to [nodejs.org](https://nodejs.org)
+2. Download the **LTS** version (the left button — "Recommended for Most Users")
+3. Open the downloaded file and follow the installer
+4. When it's done, open **Terminal** (press `Cmd + Space`, type "Terminal", press Enter)
+5. Type `node --version` and press Enter — you should see a version number like `v20.x.x`
+
+### Step 3 — Install Claude Code
+
+In Terminal, paste this and press Enter:
+
 ```bash
-cd /path/to/personal-os
-claude
+npm install -g @anthropic-ai/claude-code
 ```
 
-**Option B — Clone with git:**
-```bash
-git clone https://github.com/Simeon92/personal-os.git
-cd personal-os
-claude
-```
+When it's done, type `claude --version` to confirm it worked.
 
-Claude detects an empty system and runs `/onboarding` automatically. The interview takes 15-20 minutes and populates everything — your goals, priorities, voice, people, and a first daily plan.
+### Step 4 — Download Personal OS
 
-**One additional step — register scheduled tasks:**
+1. On this GitHub page, click the green **Code** button
+2. Click **Download ZIP**
+3. Find the downloaded zip in your Downloads folder and double-click it to unzip
+4. You'll have a folder called `personal-os-main` — rename it to `personal-os` if you like
 
-After onboarding, ask Claude to register the four recurring tasks:
+### Step 5 — Open it in Claude Code
+
+1. Open **Terminal**
+2. Type `cd ` (with a space after it — don't press Enter yet)
+3. Open Finder, find your `personal-os` folder, and **drag it into the Terminal window**
+4. Terminal will fill in the path automatically — now press Enter
+5. Type `claude` and press Enter
+
+Claude Code will open. It detects the empty system and runs `/onboarding` automatically.
+
+### Step 6 — Complete onboarding
+
+The onboarding interview takes 15–20 minutes. It'll ask about your role, goals, current priorities, how you work, your writing style, and key people you work with.
+
+By the end, all your context files are populated and you have a first daily plan.
+
+### Step 7 — Register scheduled tasks
+
+After onboarding, paste this into Claude:
 
 ```
 Register the four scheduled tasks from .claude/scheduled-tasks/ — morning briefing, weekly retro, idea incubation, and monthly audit.
 ```
 
-That's it.
+That's the core system running.
+
+### Step 8 — Set up Chrome (recommended)
+
+Chrome lets Claude browse the web, read articles, and pull content during your sessions.
+
+1. Open Chrome and go to the [Claude-in-Chrome extension](https://chromewebstore.google.com/detail/claude-in-chrome/omphmhniahkabokojfbnagdmejmdcacp)
+2. Click **Add to Chrome**
+3. Open Terminal and run: `claude mcp add claude-in-chrome -- npx -y claude-in-chrome-mcp`
+4. Restart Claude Code — Chrome will now be connected
+
+---
+
+## Already have Claude Code? Quick setup
+
+```bash
+# Option A — Download (no git required)
+# Download the ZIP from GitHub, unzip it, then:
+cd /path/to/personal-os
+claude
+
+# Option B — Clone with git
+git clone https://github.com/Simeon92/personal-os.git
+cd personal-os
+claude
+```
+
+Claude detects an empty system and runs `/onboarding` automatically.
+
+After onboarding, register scheduled tasks:
+```
+Register the four scheduled tasks from .claude/scheduled-tasks/ — morning briefing, weekly retro, idea incubation, and monthly audit.
+```
 
 ---
 
@@ -59,6 +124,7 @@ At the end of every session, `/process-session` captures what was learned — pr
 | `/done-enough` | "Is this done?" |
 | `/draft` | "Draft me a..." |
 | `/monthly-audit` | End of month |
+| `/system-improve` | "How can we improve the system?" |
 
 ---
 
@@ -70,23 +136,8 @@ Uncomment the lines in `.gitignore` before your first commit if you're keeping t
 
 ## Integrations
 
-The OS works out of the box, but connects to four external systems for full capability.
-
 ### Chrome (web research)
-Install the [Claude-in-Chrome extension](https://chromewebstore.google.com/detail/claude-in-chrome/omphmhniahkabokojfbnagdmejmdcacp) from the Chrome Web Store, then add it to your Claude Code MCP config:
-
-```json
-{
-  "mcpServers": {
-    "Claude_in_Chrome": {
-      "command": "npx",
-      "args": ["-y", "claude-in-chrome-mcp"]
-    }
-  }
-}
-```
-
-Once connected, Claude can read web pages, pull content from URLs, and do live research without leaving the session.
+See Step 8 above. Lets Claude browse and read pages during sessions.
 
 ### Asana (tasks)
 Install the Asana MCP server, then add it to your Claude Code MCP config. Full instructions: https://github.com/roychri/mcp-server-asana
@@ -99,7 +150,7 @@ Install the Atlassian MCP server. Full instructions: https://github.com/sooperse
 Once connected, Claude can reference sprint status and project context during retros and planning.
 
 ### Outlook Calendar and Email (meetings)
-No MCP needed. Just connect your work account to macOS:
+No MCP needed. Connect your work account to macOS:
 
 1. Open **System Settings → Internet Accounts**
 2. Click **Add Account → Microsoft Exchange**
