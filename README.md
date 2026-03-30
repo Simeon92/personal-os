@@ -68,25 +68,9 @@ This sets up your recurring automations:
 - **Idea incubation** — Monday at 9am: surfaces unblocked ideas from your backlog
 - **Monthly audit** — 28th of each month: system health, skill assessment, maintenance
 
-### Step 6 — Set up Chrome (recommended)
+### Step 6 — Connect your tools
 
-Chrome lets Claude browse the web, read articles, and pull content directly into your sessions.
-
-1. Open Chrome and install the [Claude-in-Chrome extension](https://chromewebstore.google.com/detail/claude-in-chrome/omphmhniahkabokojfbnagdmejmdcacp)
-2. In Claude Desktop settings, add the Chrome MCP server to your config:
-
-```json
-{
-  "mcpServers": {
-    "Claude_in_Chrome": {
-      "command": "npx",
-      "args": ["-y", "claude-in-chrome-mcp"]
-    }
-  }
-}
-```
-
-3. Restart Claude Desktop — Chrome will be connected.
+Set up whichever integrations apply to you — see the **Integrations** section below. Chrome is recommended for everyone. Asana, Jira, and Outlook depend on what you use.
 
 ---
 
@@ -109,14 +93,30 @@ Chrome lets Claude browse the web, read articles, and pull content directly into
 
 ## Integrations
 
-### Chrome (web research)
-See Step 6 above. Lets Claude browse, read pages, and pull content during sessions.
+### Chrome (web research) — recommended for everyone
+Lets Claude browse the web, read articles, and pull content directly into your sessions.
+
+1. Open Chrome and install the [Claude-in-Chrome extension](https://chromewebstore.google.com/detail/claude-in-chrome/omphmhniahkabokojfbnagdmejmdcacp)
+2. In Claude Desktop settings, add this to your MCP config:
+
+```json
+{
+  "mcpServers": {
+    "Claude_in_Chrome": {
+      "command": "npx",
+      "args": ["-y", "claude-in-chrome-mcp"]
+    }
+  }
+}
+```
+
+3. Restart Claude Desktop.
 
 ### Asana (tasks)
-Connect the Asana MCP server so Claude can create, update, and complete tasks directly from conversation. Full instructions: https://github.com/roychri/mcp-server-asana
+Lets Claude create, update, and complete tasks directly from conversation. Full instructions: https://github.com/roychri/mcp-server-asana
 
 ### Jira (projects and sprints)
-Connect the Atlassian MCP server for sprint status and project context during retros and planning. Full instructions: https://github.com/sooperset/mcp-atlassian
+Lets Claude reference sprint status and project context during retros and planning. Full instructions: https://github.com/sooperset/mcp-atlassian
 
 ### Outlook Calendar and Email
 No extra setup needed if you're on a Mac. Connect your work account once:
