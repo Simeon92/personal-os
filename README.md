@@ -8,6 +8,14 @@ A Personal Operating System for Claude Code. Compounds learning over time, track
 
 **Requirements:** [Claude Code](https://claude.ai/code) installed. Claude Pro or higher recommended.
 
+**Option A — Download (no git required):**
+Download the zip from GitHub, unzip it, open Terminal, drag the folder into Terminal to get the path, then:
+```bash
+cd /path/to/personal-os
+claude
+```
+
+**Option B — Clone with git:**
 ```bash
 git clone https://github.com/Simeon92/personal-os.git
 cd personal-os

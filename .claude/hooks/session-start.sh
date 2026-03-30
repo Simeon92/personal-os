@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 # session-start.sh — Inject essential context only. Skills load what else they need.
 
-OS_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+# Find OS root by locating CLAUDE.md — works with or without git
+find_os_root() {
+  local dir="$PWD"
+  while [ "$dir" != "/" ]; do
+    [ -f "$dir/CLAUDE.md" ] && echo "$dir" && return
+    dir="$(dirname "$dir")"
+  done
+  echo "$PWD"
+}
+OS_ROOT="$(find_os_root)"
 
 CONTEXT_DIR="$OS_ROOT/01_context"
 LEARNINGS_DIR="$OS_ROOT/04_learnings"
