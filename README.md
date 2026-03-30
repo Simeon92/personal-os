@@ -9,7 +9,7 @@ A Personal Operating System for Claude Code. Compounds learning over time, track
 **Requirements:** [Claude Code](https://claude.ai/code) installed. Claude Pro or higher recommended.
 
 ```bash
-git clone https://github.com/[your-username]/personal-os.git
+git clone https://github.com/Simeon92/personal-os.git
 cd personal-os
 claude
 ```
