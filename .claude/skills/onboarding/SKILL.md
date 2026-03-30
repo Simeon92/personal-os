@@ -21,11 +21,32 @@ Do not ask for information you already have. If some files have content, skip th
 Ask these questions as a form:
 
 1. "What's your name?" (free text, required)
-2. "What's your role and what do you own?" (free text, e.g., "VP of Product at Acme Corp — I own the roadmap, a team of 6, and the relationship with our enterprise clients")
-3. "Tell me about your team — names, roles, what you work on together" (free text, optional)
-4. "What's your personal situation that affects your work capacity? Family commitments, health considerations, side projects, anything that shapes how much you can realistically take on." (free text, optional but encouraged)
+2. "What best describes your role?" with options:
+   - Consultant
+   - Project Manager
+   - Designer
+   - Developer
+   - Function Director
+   - VP
+   - Other (describe)
+3. "What's your specific title and what do you own?" (free text, e.g., "VP of Product at Acme Corp — I own the roadmap, a team of 6, and the relationship with our enterprise clients")
+4. "Tell me about your team — names, roles, what you work on together" (free text, optional)
+5. "What's your personal situation that affects your work capacity? Family commitments, health considerations, side projects, anything that shapes how much you can realistically take on." (free text, optional but encouraged)
 
 **After Round 1:** Write `01_context/about-me.md` with the Role & Responsibilities, Team, and Personal Load sections populated.
+
+Use the role selection to pre-populate sensible pillar defaults for Round 2:
+
+| Role | Default Pillars |
+|------|----------------|
+| Consultant | Client Delivery, Business Development, Thought Leadership, Personal |
+| Project Manager | Delivery, Stakeholder Management, Team & Process, Personal |
+| Designer | Craft & Output, Client/Product Work, Portfolio & Brand, Personal |
+| Developer | Engineering, Product & Delivery, Learning & Growth, Personal |
+| Function Director | Team & People, Strategy, Delivery, Commercial, Personal |
+| VP | Strategy, People & Org, Commercial, External Presence, Personal |
+
+In Round 2, present these defaults and ask the user to accept or customise them — don't ask them to come up with pillars from scratch.
 
 ---
 
@@ -35,12 +56,18 @@ Ask these questions as a form:
 
 1. "What are your 2-3 biggest goals for this quarter? One per line — just name them for now." (free text)
 2. "For each goal, what does success look like? What would prove you achieved it?" (free text)
-3. "What are your main areas of responsibility? These become your 'pillars' — the categories your work falls into. Examples: Product & Engineering, Content & Thought Leadership, Client Work, Operations, Personal." (free text)
+3. Present the default pillars for their role (from the table in Round 1) and ask: "These are suggested focus areas based on your role. Do these work, or would you like to adjust any?" (accept / tweak / replace)
 
 **After Round 2:**
 - Write `01_context/goals.md` with quarterly goals + success criteria + empty monthly milestones
-- Update `01_context/task-conventions.md` with the pillar definitions from their answer
-- Note: Monthly milestones are empty — tell the user they'll add these as they understand the quarter better
+- Update `.claude/system/task-conventions.md` with their confirmed pillar definitions and sensible target ranges based on role:
+  - Consultant: Client Delivery 40-50%, Business Development 15-25%, Thought Leadership 10-20%, Personal acknowledged
+  - Project Manager: Delivery 40-50%, Stakeholder Management 15-25%, Team & Process 15-20%, Personal acknowledged
+  - Designer: Craft & Output 40-50%, Client/Product Work 20-30%, Portfolio & Brand 10-20%, Personal acknowledged
+  - Developer: Engineering 40-55%, Product & Delivery 15-25%, Learning & Growth 10-20%, Personal acknowledged
+  - Function Director: Team & People 25-35%, Strategy 20-30%, Delivery 20-30%, Commercial 10-20%, Personal acknowledged
+  - VP: Strategy 25-35%, People & Org 20-30%, Commercial 15-25%, External Presence 10-20%, Personal acknowledged
+- Tell the user: "Monthly milestones are empty for now — you'll fill these in as the quarter takes shape."
 
 ---
 
@@ -117,7 +144,7 @@ Ask these questions as a form:
 
 After all 6 rounds are complete:
 
-1. **Write `06_System/changelog.md`** — add v1.0 entry:
+1. **Write `.claude/system/changelog.md`** — add v1.0 entry:
    - Date: today
    - Trigger: Initial setup via /onboarding
    - Changes: All context files populated through onboarding interview
