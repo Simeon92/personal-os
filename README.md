@@ -34,7 +34,7 @@ On this GitHub page, click the green **Code** button, then **Download ZIP**. Fin
 
 In Claude Desktop, click the **Code** tab. Open the `personal-os` folder — either drag it in or use the folder picker.
 
-Claude detects the empty system and runs `/onboarding` automatically.
+Once the folder is open, type `/onboarding` to start the setup interview.
 
 ### Step 4 — Complete onboarding
 
