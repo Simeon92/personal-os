@@ -34,7 +34,13 @@ On this GitHub page, click the green **Code** button, then **Download ZIP**. Fin
 
 In Claude Desktop, click the **Code** tab. Open the `personal-os` folder — either drag it in or use the folder picker.
 
-Once the folder is open, type `/onboarding` to start the setup interview.
+Once the folder is open, send this message to Claude:
+
+```
+Run the onboarding skill to set up my Personal OS.
+```
+
+Claude will read the onboarding skill and start the interview.
 
 ### Step 4 — Complete onboarding
 
