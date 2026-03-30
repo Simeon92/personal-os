@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+
+# Personal content — don't commit your actual context to a public repo
+# Uncomment these lines if you fork this for yourself and want to keep data private:
+# 00_Context/about-me.md
+# 00_Context/strategy.md
+# 00_Context/goals.md
+# 00_Context/current-week.md
+# 00_Context/commitments.md
+# 00_Context/voice-and-style.md
+# 01_Projects/
+# 02_Areas/daily/
+# 07_Learnings/session-learnings/
+# 07_Learnings/working-preferences.md
+# 07_Learnings/mistake-patterns.md
+# 08_People/internal/
+# 08_People/external/
