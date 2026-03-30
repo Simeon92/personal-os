@@ -107,12 +107,6 @@ Chrome lets Claude browse the web, read articles, and pull content directly into
 
 ---
 
-## Privacy
-
-Uncomment the lines in `.gitignore` before your first commit if you're keeping this repo public — your `01_context/`, `03_people/`, and `04_learnings/` folders contain personal data.
-
----
-
 ## Integrations
 
 ### Chrome (web research)
