@@ -66,3 +66,12 @@ Triaged [N] items:
 - Duplicate of existing task: note "already tracked as [T-ID]", delete from inbox
 - No connection to current goals: "Doesn't connect to anything current. Keep, park for next quarter, or delete?"
 - 10+ items: process in batches of 5, ask "Continue?" between batches
+
+## Asana Integration
+When routing task or action items:
+- Create them in Asana via MCP (`create_task_preview`) as well as logging in `01_context/current-week.md` or `01_context/backlog.md`
+- Assign to the relevant Asana project if one is identifiable from context
+- Set due date if mentioned
+
+When routing project seeds:
+- Create the project in Asana via MCP (`create_project_preview`) and link it from the local `02_projects/` file

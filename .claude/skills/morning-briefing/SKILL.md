@@ -56,3 +56,13 @@ triggers:
 **6. Present conversationally** — under 200 words. Surface overdue first. Top 3 with brief context. End with one specific first action.
 
 "[Task]. Start with [specific first step]. You have [X] before [next commitment]."
+
+## Asana Integration
+When Asana MCP is available, pull today's assigned tasks directly:
+- Use Asana MCP `get_my_tasks` to fetch tasks due today or overdue
+- Cross-reference with `01_context/current-week.md` — they should align
+- If a task exists in current-week.md but not Asana, flag it: "This isn't in Asana yet — want me to create it?"
+- If a task is in Asana but not in current-week.md, surface it
+
+## Calendar Integration
+Today's meetings are read from Apple Calendar (Outlook synced via macOS Internet Accounts) — already in session context. For each meeting, note one line of prep if a relevant person page exists in `03_people/`.

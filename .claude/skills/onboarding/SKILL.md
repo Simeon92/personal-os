@@ -10,9 +10,33 @@ You are running the Personal OS onboarding interview. This sets up the entire sy
 
 ## Instructions
 
-Work through 6 rounds of AskUserQuestion forms. After each round, immediately write the data to the appropriate files. Don't wait until all rounds are complete.
+Work through 7 rounds of AskUserQuestion forms. Start with Round 0 (integrations) before anything else — this determines how the rest of the system is configured. After each round, immediately write the data to the appropriate files.
 
 Do not ask for information you already have. If some files have content, skip the relevant round and note what was already populated.
+
+---
+
+## Round 0: Integrations
+
+Before setting up any context files, verify the integrations are working. These power the most valuable parts of the system.
+
+**Step 1 — Asana MCP**
+Check if Asana MCP is available by attempting to call `get_my_tasks`. If it works: "Asana connected — I can see your tasks." If it fails: "Asana MCP isn't connected yet. To set it up, follow the instructions at https://github.com/Simeon92/personal-os — then restart Claude Code and run /onboarding again."
+
+**Step 2 — Jira MCP**
+Check if Jira MCP is available by attempting to call `getAccessibleAtlassianResources`. If it works: "Jira connected." If it fails: "Jira MCP isn't connected. To set it up, follow the instructions at https://github.com/Simeon92/personal-os."
+
+**Step 3 — Apple Calendar (Outlook)**
+Run this check:
+```applescript
+tell application "Calendar" to return name of every calendar
+```
+If calendars are returned: "Apple Calendar is accessible — meetings will appear in your daily briefing automatically."
+If it fails or returns empty: "Apple Calendar isn't accessible. To connect your Outlook calendar: go to System Settings → Internet Accounts → Add Account → Microsoft Exchange, sign in with your work email. Once done, your Outlook calendar will sync to Apple Calendar and appear here automatically."
+
+**Do not block onboarding on failed integrations.** Note what's missing and continue. The system works without them — it's just less powerful.
+
+---
 
 ---
 

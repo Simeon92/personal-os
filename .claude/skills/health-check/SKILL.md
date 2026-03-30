@@ -39,3 +39,13 @@ Rank: Critical → Warning → Informational. Name specific files, tasks, and pe
 End with: "The most important thing to address right now is [X]."
 
 If clean: "System looks healthy. [One thing to keep an eye on if anything]."
+
+## Asana Integration
+When scanning for stalled tasks:
+- Use Asana MCP `get_my_tasks` to check for overdue tasks across all projects
+- Flag any Asana tasks overdue by 7+ days that aren't surfaced in `01_context/current-week.md`
+- Check for tasks assigned to you with no due date — these are invisible priorities
+
+## Jira Integration
+- Check for any Jira issues assigned to you in "In Progress" status with no recent updates
+- Flag blockers that have been open 5+ days

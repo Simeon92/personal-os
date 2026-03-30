@@ -66,3 +66,29 @@ At the end of every session, `/process-session` captures what was learned — pr
 ## Privacy
 
 Uncomment the lines in `.gitignore` before your first commit if you're keeping this repo public — your `01_context/`, `03_people/`, and `04_learnings/` contain personal data.
+
+---
+
+## Integrations
+
+The OS works out of the box, but connects to three external systems for full capability.
+
+### Asana (tasks)
+Install the Asana MCP server, then add it to your Claude Code MCP config. Full instructions: https://github.com/roychri/mcp-server-asana
+
+Once connected, Claude can create, update, and complete Asana tasks directly from conversation.
+
+### Jira (projects and sprints)
+Install the Atlassian MCP server. Full instructions: https://github.com/sooperset/mcp-atlassian
+
+Once connected, Claude can reference sprint status and project context during retros and planning.
+
+### Outlook Calendar and Email (meetings)
+No MCP needed. Just connect your work account to macOS:
+
+1. Open **System Settings → Internet Accounts**
+2. Click **Add Account → Microsoft Exchange**
+3. Sign in with your work email and password
+4. Enable **Calendar** and **Mail**
+
+Your Outlook calendar will sync to Apple Calendar. Today's meetings appear automatically in every session and morning briefing.

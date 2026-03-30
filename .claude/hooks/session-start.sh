@@ -24,6 +24,34 @@ ABOUT_ME=$(cat "$CONTEXT_DIR/about-me.md" 2>/dev/null)
 PREFS=$(cat "$LEARNINGS_DIR/preferences.md" 2>/dev/null)
 MISTAKES=$(cat "$LEARNINGS_DIR/mistakes.md" 2>/dev/null)
 
+# --- APPLE CALENDAR (Outlook synced via macOS Internet Accounts) ---
+
+read_apple_calendar() {
+  osascript 2>/dev/null << 'APPLESCRIPT'
+tell application "Calendar"
+  set todayStart to current date
+  set time of todayStart to 0
+  set todayEnd to todayStart + 1 * days
+  set output to ""
+  repeat with cal in every calendar
+    set calEvents to every event of cal whose start date >= todayStart and start date < todayEnd
+    repeat with ev in calEvents
+      set evTitle to summary of ev
+      set evStart to time string of (start date of ev)
+      set output to output & "- " & evTitle & " (" & evStart & ")" & linefeed
+    end repeat
+  end repeat
+  if output is "" then
+    return "No meetings today"
+  else
+    return output
+  end if
+end tell
+APPLESCRIPT
+}
+
+TODAY_CALENDAR=$(read_apple_calendar)
+
 # --- CHECKS ---
 
 TODAY=$(date +%Y-%m-%d)
@@ -92,9 +120,14 @@ $ABOUT_ME
 ## PREFERENCES
 $PREFS
 
+## TODAY'S CALENDAR
+$TODAY_CALENDAR
+
 ## MISTAKE PATTERNS
 $MISTAKES
 ---
-Apply preferences and mistake patterns throughout. Skills load additional context (goals, voice, people, backlog) when they need it."
+Apply preferences and mistake patterns throughout. Skills load additional context (goals, voice, people, backlog) when they need it.
+Task management is in Asana — use Asana MCP tools when creating, updating, or completing tasks.
+Project/sprint context is in Jira — use Jira MCP tools when referencing project work."
 
 printf '{"type":"system","message":"%s"}' "$(echo -e "$MESSAGE" | python3 -c "import sys,json; print(json.dumps(sys.stdin.read())[1:-1])" 2>/dev/null || echo -e "$MESSAGE" | sed 's/"/\\"/g; s/$/\\n/' | tr -d '\n')"

@@ -55,3 +55,15 @@ Carry forward incomplete P0s/P1s. Remove completed tasks. Update date range.
 
 **9. Present the retro**
 Lead with what shipped. Name what slipped with day counts. One avoidance pattern if present. Pillar balance in one line. Commitment health in one line. What got promoted. End with one recommendation for next week.
+
+## Asana Integration
+When reviewing what shipped vs. slipped:
+- Use Asana MCP `get_my_tasks` to pull tasks completed this week — use as the authoritative shipped list
+- Cross-reference with `01_context/current-week.md` checkboxes
+- Any discrepancy (done in Asana but not marked in current-week, or vice versa) — reconcile before archiving
+
+## Jira Integration
+When reviewing project/sprint progress:
+- Use Jira MCP to check sprint status for any active sprints
+- Surface any Jira issues that are blocked or overdue
+- Note sprint velocity if relevant to the pillar balance assessment
