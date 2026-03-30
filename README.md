@@ -1,63 +1,54 @@
 # Personal OS
 
-A Personal Operating System for Claude Code. Compounds learning over time, tracks commitments, connects quarterly goals to daily work.
+A Personal Operating System built on Claude Code. Compounds learning over time, tracks commitments, and connects your quarterly goals to daily work.
 
 ---
 
-## Complete Beginner Setup
+## What this system does
 
-Never used Claude before? Start here. This takes about 20 minutes.
+**Remembers how you work.** Every session, Claude reads your current priorities, open commitments, and accumulated preferences before you say a word. After a few weeks, it knows your working style, your patterns, and your mistakes — and applies them automatically.
 
-### Step 1 — Create a Claude account
+**Connects goals to daily work.** Your quarterly goals flow down to monthly milestones, weekly priorities, and a daily focus list. Every task connects upward to something that matters. The system flags when milestones are slipping.
 
-Go to [claude.ai](https://claude.ai) and sign up.
+**Tracks what you've promised people.** Every commitment you make — to your manager, your team, a client — gets logged with a due date and surfaced daily until it's done.
 
-You'll need a **Pro plan** ($20/month) at minimum. If you plan to use this system heavily every day, **Max plan** gives you more usage and is worth it.
+**Captures ideas without killing flow.** Dump anything into `00_inbox/`. Run `/triage` and Claude routes everything to the right place — tasks, backlog, ideas, people pages — using your goals as context.
 
-### Step 2 — Install Node.js
+**Learns session by session.** At the end of every session, `/process-session` captures preferences, mistakes, ideas, and repeated workflows. Patterns get promoted to permanent memory during the weekly retro. Over time, Claude gets better at working with you specifically.
 
-Claude Code runs on Node.js. You need to install it first.
+**Drafts in your voice.** When you need something written, `/draft` produces a first version that sounds like you — not a corporate document. It reads your voice-and-style profile before writing a single word.
 
-1. Go to [nodejs.org](https://nodejs.org)
-2. Download the **LTS** version (the left button — "Recommended for Most Users")
-3. Open the downloaded file and follow the installer
-4. When it's done, open **Terminal** (press `Cmd + Space`, type "Terminal", press Enter)
-5. Type `node --version` and press Enter — you should see a version number like `v20.x.x`
+---
 
-### Step 3 — Install Claude Code
+## Setup
 
-In Terminal, paste this and press Enter:
+### Step 1 — Download Claude Desktop
 
-```bash
-npm install -g @anthropic-ai/claude-code
-```
+Go to [claude.ai/download](https://claude.ai/download) and download the Mac app. Open it and sign in.
 
-When it's done, type `claude --version` to confirm it worked.
+### Step 2 — Download Personal OS
 
-### Step 4 — Download Personal OS
+On this GitHub page, click the green **Code** button, then **Download ZIP**. Find the zip in your Downloads folder and double-click it to unzip. You'll get a folder called `personal-os-main` — rename it to `personal-os` if you like.
 
-1. On this GitHub page, click the green **Code** button
-2. Click **Download ZIP**
-3. Find the downloaded zip in your Downloads folder and double-click it to unzip
-4. You'll have a folder called `personal-os-main` — rename it to `personal-os` if you like
+### Step 3 — Open it in Claude
 
-### Step 5 — Open it in Claude Code
+In Claude Desktop, click the **Code** tab. Open the `personal-os` folder — either drag it in or use the folder picker.
 
-1. Open **Terminal**
-2. Type `cd ` (with a space after it — don't press Enter yet)
-3. Open Finder, find your `personal-os` folder, and **drag it into the Terminal window**
-4. Terminal will fill in the path automatically — now press Enter
-5. Type `claude` and press Enter
+Claude detects the empty system and runs `/onboarding` automatically.
 
-Claude Code will open. It detects the empty system and runs `/onboarding` automatically.
+### Step 4 — Complete onboarding
 
-### Step 6 — Complete onboarding
+The onboarding interview takes 15–20 minutes. It covers:
+- Your role and what you own
+- Your quarterly goals and what success looks like
+- What you're working on right now
+- How and when you do your best work
+- Your writing style and voice
+- The key people you work with
 
-The onboarding interview takes 15–20 minutes. It'll ask about your role, goals, current priorities, how you work, your writing style, and key people you work with.
+By the end, all your context files are populated and you have a first daily plan ready to go.
 
-By the end, all your context files are populated and you have a first daily plan.
-
-### Step 7 — Register scheduled tasks
+### Step 5 — Register scheduled tasks
 
 After onboarding, paste this into Claude:
 
@@ -65,96 +56,74 @@ After onboarding, paste this into Claude:
 Register the four scheduled tasks from .claude/scheduled-tasks/ — morning briefing, weekly retro, idea incubation, and monthly audit.
 ```
 
-That's the core system running.
+This sets up your recurring automations:
+- **Morning briefing** — weekdays at 8am: priorities, commitments, meetings, daily plan
+- **Weekly retro** — Friday at 4pm: what shipped, what slipped, pattern promotion
+- **Idea incubation** — Monday at 9am: surfaces unblocked ideas from your backlog
+- **Monthly audit** — 28th of each month: system health, skill assessment, maintenance
 
-### Step 8 — Set up Chrome (recommended)
+### Step 6 — Set up Chrome (recommended)
 
-Chrome lets Claude browse the web, read articles, and pull content during your sessions.
+Chrome lets Claude browse the web, read articles, and pull content directly into your sessions.
 
-1. Open Chrome and go to the [Claude-in-Chrome extension](https://chromewebstore.google.com/detail/claude-in-chrome/omphmhniahkabokojfbnagdmejmdcacp)
-2. Click **Add to Chrome**
-3. Open Terminal and run: `claude mcp add claude-in-chrome -- npx -y claude-in-chrome-mcp`
-4. Restart Claude Code — Chrome will now be connected
+1. Open Chrome and install the [Claude-in-Chrome extension](https://chromewebstore.google.com/detail/claude-in-chrome/omphmhniahkabokojfbnagdmejmdcacp)
+2. In Claude Desktop settings, add the Chrome MCP server to your config:
 
----
-
-## Already have Claude Code? Quick setup
-
-```bash
-# Option A — Download (no git required)
-# Download the ZIP from GitHub, unzip it, then:
-cd /path/to/personal-os
-claude
-
-# Option B — Clone with git
-git clone https://github.com/Simeon92/personal-os.git
-cd personal-os
-claude
+```json
+{
+  "mcpServers": {
+    "Claude_in_Chrome": {
+      "command": "npx",
+      "args": ["-y", "claude-in-chrome-mcp"]
+    }
+  }
+}
 ```
 
-Claude detects an empty system and runs `/onboarding` automatically.
-
-After onboarding, register scheduled tasks:
-```
-Register the four scheduled tasks from .claude/scheduled-tasks/ — morning briefing, weekly retro, idea incubation, and monthly audit.
-```
-
----
-
-## How it works
-
-Every session, Claude reads your current week, open commitments, and working preferences before you say anything. Skills load additional context (goals, voice, people pages) only when they need it.
-
-Dump anything raw into `00_inbox/`. Run `/triage` and Claude routes everything to the right place using your goals as context.
-
-At the end of every session, `/process-session` captures what was learned — preferences, mistakes, ideas, commitments. After a few weeks, Claude knows how you work.
+3. Restart Claude Desktop — Chrome will be connected.
 
 ---
 
 ## Skills
 
-| Skill | When |
-|-------|------|
-| `/onboarding` | First setup, or to reset |
-| `/triage` | Files in `00_inbox/` — routes them |
-| `/morning-briefing` | Start of day |
-| `/weekly-retro` | Friday |
-| `/process-session` | End of session (auto-triggered) |
-| `/health-check` | "What's slipping?" |
-| `/done-enough` | "Is this done?" |
-| `/draft` | "Draft me a..." |
-| `/monthly-audit` | End of month |
+| Skill | When to use it |
+|-------|---------------|
+| `/onboarding` | First setup, or to reset the system |
+| `/triage` | When files are sitting in `00_inbox/` |
+| `/morning-briefing` | Start of day — priorities, meetings, deep work windows |
+| `/weekly-retro` | Friday — what shipped, what slipped, what you learned |
+| `/process-session` | End of session — captures preferences, mistakes, ideas (auto-triggered) |
+| `/health-check` | "What's slipping?" — scans for stale tasks and overdue commitments |
+| `/done-enough` | When you're over-refining something that's ready to ship |
+| `/draft` | "Draft me a..." — writes in your voice |
+| `/monthly-audit` | End of month — full system health and maintenance |
 | `/system-improve` | "How can we improve the system?" |
 
 ---
 
 ## Privacy
 
-Uncomment the lines in `.gitignore` before your first commit if you're keeping this repo public — your `01_context/`, `03_people/`, and `04_learnings/` contain personal data.
+Uncomment the lines in `.gitignore` before your first commit if you're keeping this repo public — your `01_context/`, `03_people/`, and `04_learnings/` folders contain personal data.
 
 ---
 
 ## Integrations
 
 ### Chrome (web research)
-See Step 8 above. Lets Claude browse and read pages during sessions.
+See Step 6 above. Lets Claude browse, read pages, and pull content during sessions.
 
 ### Asana (tasks)
-Install the Asana MCP server, then add it to your Claude Code MCP config. Full instructions: https://github.com/roychri/mcp-server-asana
-
-Once connected, Claude can create, update, and complete Asana tasks directly from conversation.
+Connect the Asana MCP server so Claude can create, update, and complete tasks directly from conversation. Full instructions: https://github.com/roychri/mcp-server-asana
 
 ### Jira (projects and sprints)
-Install the Atlassian MCP server. Full instructions: https://github.com/sooperset/mcp-atlassian
+Connect the Atlassian MCP server for sprint status and project context during retros and planning. Full instructions: https://github.com/sooperset/mcp-atlassian
 
-Once connected, Claude can reference sprint status and project context during retros and planning.
-
-### Outlook Calendar and Email (meetings)
-No MCP needed. Connect your work account to macOS:
+### Outlook Calendar and Email
+No extra setup needed if you're on a Mac. Connect your work account once:
 
 1. Open **System Settings → Internet Accounts**
 2. Click **Add Account → Microsoft Exchange**
-3. Sign in with your work email and password
+3. Sign in with your work email
 4. Enable **Calendar** and **Mail**
 
-Your Outlook calendar will sync to Apple Calendar. Today's meetings appear automatically in every session and morning briefing.
+Your Outlook calendar syncs to Apple Calendar. Today's meetings appear automatically in every session.
