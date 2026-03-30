@@ -58,7 +58,6 @@ At the end of every session, `/process-session` captures what was learned — pr
 | `/health-check` | "What's slipping?" |
 | `/done-enough` | "Is this done?" |
 | `/draft` | "Draft me a..." |
-| `/finishing-energy` | Losing steam on late-stage work |
 | `/monthly-audit` | End of month |
 
 ---
