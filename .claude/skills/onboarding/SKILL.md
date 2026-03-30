@@ -42,6 +42,8 @@ If it fails or returns empty: "Apple Calendar isn't accessible. To connect your 
 
 ## Round 1: Who Are You
 
+> **Fast-fill option:** Before this round, mention: "If you have a LinkedIn profile, there's a bootstrap prompt in `prompts/linkedin-to-context.md` you can paste into another AI tab — it'll generate a draft `about-me.md` and `strategy.md` you can paste in here instead of answering these questions manually."
+
 Ask these questions as a form:
 
 1. "What's your name?" (free text, required)
@@ -76,6 +78,8 @@ In Round 2, present these defaults and ask the user to accept or customise them 
 
 ## Round 2: What Are You Working Toward
 
+> **Fast-fill option:** Before this round, mention: "If you have a recent performance review or appraisal, the prompts in `prompts/performance-review.md` and `prompts/appraisal-feedback.md` can help extract goals and commitments into the right format."
+
 Ask these questions as a form:
 
 1. "What are your 2-3 biggest goals for this quarter? One per line — just name them for now." (free text)
@@ -96,6 +100,8 @@ Ask these questions as a form:
 ---
 
 ## Round 3: Right Now
+
+> **Fast-fill option:** Before this round, mention: "If you want to do a proper brain dump of everything you're juggling, the prompt in `prompts/workload-dump.md` will turn it into a structured `current-week.md` and `backlog.md`. Takes about 5 minutes."
 
 Ask these questions as a form:
 
@@ -134,6 +140,8 @@ Ask these questions as a form:
 ---
 
 ## Round 5: Your Voice
+
+> **Fast-fill option:** Before this round, mention: "If you have a few things you've written — emails, posts, documents — the prompt in `prompts/voice-extraction.md` will analyse them and generate a full `voice-and-style.md` automatically. Much better than describing your voice from scratch."
 
 Ask these questions as a form:
 
