@@ -128,10 +128,8 @@ Every weekly priority connects to at least one quarterly goal. Morning Briefing 
 | `/weekly-retro` | Friday or "retro" | Shipped/slipped, patterns, pillar balance, learning promotion |
 | `/process-session` | Session end (auto via hook) | Captures preferences, mistakes, ideas, commitments |
 | `/health-check` | "what's slipping", "health check" | Stale tasks, aging ideas, overdue commitments |
-| `/project-health` | "how are my projects doing" | Green/yellow/red scanner on active projects |
 | `/done-enough` | "is this done", over-refinement detected | Makes the ship-it call |
 | `/draft` | "draft me a..." | Produces first draft in the user's voice |
-| `/save-insight` | "save this insight", notable learning | Structured insight capture with context and lessons |
 | `/system-improve` | "how can we improve" | Reviews changelog + learnings, proposes changes |
 | `/monthly-audit` | End of month | Full maintenance, skill assessment, system health |
 
