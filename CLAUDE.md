@@ -146,12 +146,15 @@ Every weekly priority connects to at least one quarterly goal. Morning Briefing 
 | **Jira** | Jira MCP | Sprint and project context. Issue tracking. |
 | **Outlook Calendar** | Apple Calendar (synced via macOS Internet Accounts) | Today's meetings. Injected automatically at session start. |
 | **Outlook Email** | Apple Mail (synced via macOS Internet Accounts) | Referenced when drafting emails or processing commitments. |
+| **Chrome** | Claude-in-Chrome MCP | Web research, reading pages, pulling content, screenshot capture. |
 
 **Asana is the task system.** When creating, updating, or completing a task, use Asana MCP — don't only update `01_context/current-week.md`. Both should stay in sync.
 
 **Jira is the project system.** Sprint status, issue tracking, and sprint planning live in Jira. Reference it when doing weekly retros and health checks.
 
 **Calendar loads automatically.** Today's meetings are injected at session start from Apple Calendar. No manual step required.
+
+**Chrome enables web research.** When gathering information, reading articles, or pulling content from URLs, use the Claude-in-Chrome MCP tools. Fall back to WebSearch/WebFetch if unavailable.
 
 If an MCP is unavailable, degrade gracefully — continue with local files and note what's missing.
 

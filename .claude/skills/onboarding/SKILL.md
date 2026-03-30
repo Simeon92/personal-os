@@ -34,6 +34,9 @@ tell application "Calendar" to return name of every calendar
 If calendars are returned: "Apple Calendar is accessible — meetings will appear in your daily briefing automatically."
 If it fails or returns empty: "Apple Calendar isn't accessible. To connect your Outlook calendar: go to System Settings → Internet Accounts → Add Account → Microsoft Exchange, sign in with your work email. Once done, your Outlook calendar will sync to Apple Calendar and appear here automatically."
 
+**Step 4 — Chrome MCP**
+Check if the Claude-in-Chrome MCP is available by attempting to call `mcp__Claude_in_Chrome__get_page_text` or any Chrome tool. If it works: "Chrome connected — I can browse, read pages, and pull content from the web." If it fails: "Chrome MCP isn't connected. To set it up: install the Claude-in-Chrome extension from the Chrome Web Store, then add it to your Claude Code MCP config. Full instructions: https://github.com/Simeon92/personal-os. This powers web research, reading articles, and pulling content directly into your work."
+
 **Do not block onboarding on failed integrations.** Note what's missing and continue. The system works without them — it's just less powerful.
 
 ---

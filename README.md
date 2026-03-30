@@ -71,7 +71,23 @@ Uncomment the lines in `.gitignore` before your first commit if you're keeping t
 
 ## Integrations
 
-The OS works out of the box, but connects to three external systems for full capability.
+The OS works out of the box, but connects to four external systems for full capability.
+
+### Chrome (web research)
+Install the [Claude-in-Chrome extension](https://chromewebstore.google.com/detail/claude-in-chrome/omphmhniahkabokojfbnagdmejmdcacp) from the Chrome Web Store, then add it to your Claude Code MCP config:
+
+```json
+{
+  "mcpServers": {
+    "Claude_in_Chrome": {
+      "command": "npx",
+      "args": ["-y", "claude-in-chrome-mcp"]
+    }
+  }
+}
+```
+
+Once connected, Claude can read web pages, pull content from URLs, and do live research without leaving the session.
 
 ### Asana (tasks)
 Install the Asana MCP server, then add it to your Claude Code MCP config. Full instructions: https://github.com/roychri/mcp-server-asana
