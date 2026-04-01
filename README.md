@@ -96,7 +96,7 @@ Set up whichever integrations apply to you — see the **Integrations** section 
 ### Chrome (web research) — recommended for everyone
 Lets Claude browse the web, read articles, and pull content directly into your sessions.
 
-1. Open Chrome and install the [Claude-in-Chrome extension](https://chromewebstore.google.com/detail/claude-in-chrome/omphmhniahkabokojfbnagdmejmdcacp)
+1. Open Chrome and install the [Claude-in-Chrome extension](https://chromewebstore.google.com/detail/claude-ai-chrome-extensio/ndeejgokieklaealoikgdmbmjdkmaoco)
 2. In Claude Desktop settings, add this to your MCP config:
 
 ```json
