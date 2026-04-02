@@ -24,19 +24,50 @@ You are running the Personal OS onboarding interview. This is a mandatory, end-t
 
 Check each integration before doing anything else. These determine how the rest of the system works.
 
-**Asana MCP**
-Attempt `get_my_tasks`. If it works: "Asana connected." If it fails: "Asana isn't connected. Go to **Settings → Connectors** in Claude Desktop, search for Asana, and follow the prompts. Restart Claude Desktop, then run onboarding again."
+**Chrome MCP** — check this first
+Attempt any Chrome tool. If it works: "Chrome connected." If it fails: "Chrome isn't connected — this is the most important one to fix. Install the Claude-in-Chrome extension from the Chrome Web Store, then go to **Settings → Connectors** and add Claude in Chrome. Restart Claude Desktop and run onboarding again." Do not proceed until Chrome is confirmed.
+
+**Task Manager Detection** — this is the most important configuration step
+Ask: "What do you use to manage your personal tasks? For example: Things 3, Todoist, Asana, Linear, Notion, ClickUp, Microsoft To Do — or something else?"
+
+Based on their answer, attempt to connect to the relevant MCP:
+
+| Tool | MCP check |
+|------|-----------|
+| Things 3 | Attempt `mcp__things__get_today` |
+| Asana | Attempt `get_my_tasks` |
+| Todoist | Attempt any Todoist MCP tool |
+| Linear | Attempt any Linear MCP tool |
+| Notion | Attempt any Notion MCP tool |
+| ClickUp | Attempt any ClickUp MCP tool |
+| Microsoft To Do | Attempt any Microsoft To Do MCP tool |
+| Other / None | Skip MCP check |
+
+**If their tool's MCP is connected:** "Great — [Tool] is connected. I'll create, update, and complete tasks there directly."
+
+**If their tool has no MCP or isn't connected yet:** "I can't connect to [Tool] directly right now. You have two options:
+1. Set it up: go to **Settings → Connectors** in Claude Desktop and search for [Tool]. If it's there, add it and restart.
+2. Use Asana instead: it's a solid personal task manager and the MCP is easy to connect. Go to **Settings → Connectors**, search for Asana, and add it.
+
+Which would you prefer?" Wait for their answer before continuing.
+
+**If they say they don't use a task manager:** "No problem — I'll set you up with Asana. It's free for personal use and integrates well. Go to **Settings → Connectors**, search for Asana, add it, and restart. Then come back and run onboarding again."
+
+**Save the task manager config** to `01_context/about-me.md` under `## Task Manager`:
+```
+Task Manager: [Tool name]
+MCP Connected: Yes / No
+```
+
+If MCP is not connected for their chosen tool and they're not switching to Asana, note it as `MCP Connected: No — tasks managed in current-week.md only` and continue. Task management will work through the context files instead.
 
 **Jira MCP**
-Attempt `getAccessibleAtlassianResources`. If it works: "Jira connected." If it fails: "Jira isn't connected. Go to **Settings → Connectors**, search for Jira or Atlassian, and follow the prompts."
-
-**Chrome MCP**
-Attempt any Chrome tool. If it works: "Chrome connected." If it fails: "Chrome isn't connected — this is the most important one to fix. Install the Claude-in-Chrome extension from the Chrome Web Store, then go to **Settings → Connectors** and add Claude in Chrome. Restart Claude Desktop and run onboarding again."
+Attempt `getAccessibleAtlassianResources`. If it works: "Jira connected — I'll use this for project and sprint context." If it fails: "Jira isn't connected. Go to **Settings → Connectors**, search for Jira or Atlassian, and follow the prompts."
 
 **Outlook Calendar URL**
 Ask: "Open your Outlook calendar in Chrome and copy the URL from the address bar. Paste it here." Save to `01_context/about-me.md` under `## Calendar URL`. This is required — the morning briefing can't show your meetings without it.
 
-Do not proceed until Chrome MCP is confirmed. Every other integration failure can be noted and continued; Chrome is load-bearing for too many features to skip.
+Do not proceed until Chrome MCP is confirmed and task manager config is saved.
 
 ---
 

@@ -139,12 +139,14 @@ Every weekly priority connects to at least one quarterly goal. Morning Briefing 
 
 | Tool | How | Used For |
 |------|-----|---------|
-| **Asana** | Asana MCP | Task creation, updates, completion. Authoritative task list. |
+| **Task Manager** | MCP (tool-dependent — see about-me.md) | Personal task creation, updates, completion. |
 | **Jira** | Jira MCP | Sprint and project context. Issue tracking. |
 | **Outlook Calendar** | Chrome MCP (navigates to saved calendar URL) | Today's meetings. Read during morning briefing. |
 | **Chrome** | Claude-in-Chrome MCP | Web research, reading pages, pulling content, calendar. |
 
-**Asana is the task system.** When creating, updating, or completing a task, use Asana MCP — don't only update `01_context/current-week.md`. Both should stay in sync.
+**Task manager is user-configured.** Check `01_context/about-me.md` under `## Task Manager` to find out which tool this user has and whether the MCP is connected. When creating, updating, or completing tasks: use the configured MCP if connected, otherwise manage tasks in `01_context/current-week.md`. Always keep both in sync if MCP is available.
+
+Supported task manager MCPs: Things 3, Asana, Todoist, Linear, Notion, ClickUp, Microsoft To Do. If none is connected, `current-week.md` is the authoritative task list.
 
 **Jira is the project system.** Sprint status, issue tracking, and sprint planning live in Jira. Reference it when doing weekly retros and health checks.
 

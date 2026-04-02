@@ -106,8 +106,10 @@ Lets Claude browse the web, read articles, and pull content directly into your s
 2. In Claude Desktop, go to **Settings → Connectors** and add **Claude in Chrome**
 3. Restart Claude Desktop
 
-### Asana (tasks)
-Lets Claude create, update, and complete tasks directly from conversation. In Claude Desktop, go to **Settings → Connectors** and search for **Asana**.
+### Task Manager
+During onboarding, you'll be asked what task manager you use. Claude will connect to it automatically if a connector is available. Supported tools: Things 3, Asana, Todoist, Linear, Notion, ClickUp, Microsoft To Do.
+
+In Claude Desktop, go to **Settings → Connectors** and search for your tool to set it up. If your tool isn't available or you don't have one, Claude will offer to set you up with Asana.
 
 ### Jira (projects and sprints)
 Lets Claude reference sprint status and project context during retros and planning. In Claude Desktop, go to **Settings → Connectors** and search for **Jira** or **Atlassian**.
