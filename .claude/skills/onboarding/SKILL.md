@@ -26,13 +26,10 @@ Check if Asana MCP is available by attempting to call `get_my_tasks`. If it work
 **Step 2 — Jira MCP**
 Check if Jira MCP is available by attempting to call `getAccessibleAtlassianResources`. If it works: "Jira connected." If it fails: "Jira MCP isn't connected. To set it up, follow the instructions at https://github.com/Simeon92/personal-os."
 
-**Step 3 — Apple Calendar (Outlook)**
-Run this check:
-```applescript
-tell application "Calendar" to return name of every calendar
-```
-If calendars are returned: "Apple Calendar is accessible — meetings will appear in your daily briefing automatically."
-If it fails or returns empty: "Apple Calendar isn't accessible. To connect your Outlook calendar: go to System Settings → Internet Accounts → Add Account → Microsoft Exchange, sign in with your work email. Once done, your Outlook calendar will sync to Apple Calendar and appear here automatically."
+**Step 3 — Outlook Calendar URL**
+Ask: "What's the URL of your Outlook calendar? Open Outlook in Chrome and copy the URL from the address bar — it usually looks like `https://outlook.office.com/calendar/view/week` or a company-specific address."
+
+Save their answer to `01_context/about-me.md` under a `## Calendar URL` section. If they don't have it handy, note it as blank and tell them they can add it later — the morning briefing will prompt for it if missing.
 
 **Step 4 — Chrome MCP**
 Check if the Claude-in-Chrome MCP is available by attempting to call `mcp__Claude_in_Chrome__get_page_text` or any Chrome tool. If it works: "Chrome connected — I can browse, read pages, and pull content from the web." If it fails: "Chrome MCP isn't connected. To set it up: install the Claude-in-Chrome extension from the Chrome Web Store, then add it to your Claude Code MCP config. Full instructions: https://github.com/Simeon92/personal-os. This powers web research, reading articles, and pulling content directly into your work."

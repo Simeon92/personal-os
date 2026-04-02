@@ -118,12 +118,5 @@ Lets Claude create, update, and complete tasks directly from conversation. Full 
 ### Jira (projects and sprints)
 Lets Claude reference sprint status and project context during retros and planning. Full instructions: https://github.com/sooperset/mcp-atlassian
 
-### Outlook Calendar and Email
-No extra setup needed if you're on a Mac. Connect your work account once:
-
-1. Open **System Settings → Internet Accounts**
-2. Click **Add Account → Microsoft Exchange**
-3. Sign in with your work email
-4. Enable **Calendar** and **Mail**
-
-Your Outlook calendar syncs to Apple Calendar. Today's meetings appear automatically in every session.
+### Outlook Calendar
+No extra setup required. During onboarding, you'll be asked for your Outlook calendar URL — just open Outlook in Chrome and copy the address bar. The morning briefing reads your calendar directly from the browser each day.

@@ -65,4 +65,13 @@ When Asana MCP is available, pull today's assigned tasks directly:
 - If a task is in Asana but not in current-week.md, surface it
 
 ## Calendar Integration
-Today's meetings are read from Apple Calendar (Outlook synced via macOS Internet Accounts) — already in session context. For each meeting, note one line of prep if a relevant person page exists in `03_people/`.
+Read today's meetings via Chrome MCP:
+
+1. Get the calendar URL from `01_context/about-me.md` (under `## Calendar URL`)
+2. If no URL is saved, ask: "What's the URL of your Outlook calendar? I'll save it for next time."
+3. Use Chrome MCP to navigate to the URL — the day or week view works best
+4. Read the page to extract today's events: title, time, attendees if visible
+5. Only read the logged-in user's own calendar — ignore any other calendars or people's schedules visible on the page
+6. For each meeting, note one line of prep if a relevant person page exists in `03_people/`
+
+If Chrome MCP is unavailable, skip calendar and note it in the briefing.
