@@ -21,10 +21,10 @@ Do not ask for information you already have. If some files have content, skip th
 Before setting up any context files, verify the integrations are working. These power the most valuable parts of the system.
 
 **Step 1 — Asana MCP**
-Check if Asana MCP is available by attempting to call `get_my_tasks`. If it works: "Asana connected — I can see your tasks." If it fails: "Asana MCP isn't connected yet. To set it up, follow the instructions at https://github.com/Simeon92/personal-os — then restart Claude Code and run /onboarding again."
+Check if Asana MCP is available by attempting to call `get_my_tasks`. If it works: "Asana connected — I can see your tasks." If it fails: "Asana isn't connected yet. To add it: go to **Settings → Connectors** in Claude Desktop, search for Asana, and follow the prompts. Then restart Claude Desktop and run onboarding again."
 
 **Step 2 — Jira MCP**
-Check if Jira MCP is available by attempting to call `getAccessibleAtlassianResources`. If it works: "Jira connected." If it fails: "Jira MCP isn't connected. To set it up, follow the instructions at https://github.com/Simeon92/personal-os."
+Check if Jira MCP is available by attempting to call `getAccessibleAtlassianResources`. If it works: "Jira connected." If it fails: "Jira isn't connected. Go to **Settings → Connectors**, search for Jira or Atlassian, and follow the prompts."
 
 **Step 3 — Outlook Calendar URL**
 Ask: "What's the URL of your Outlook calendar? Open Outlook in Chrome and copy the URL from the address bar — it usually looks like `https://outlook.office.com/calendar/view/week` or a company-specific address."
@@ -32,7 +32,7 @@ Ask: "What's the URL of your Outlook calendar? Open Outlook in Chrome and copy t
 Save their answer to `01_context/about-me.md` under a `## Calendar URL` section. If they don't have it handy, note it as blank and tell them they can add it later — the morning briefing will prompt for it if missing.
 
 **Step 4 — Chrome MCP**
-Check if the Claude-in-Chrome MCP is available by attempting to call `mcp__Claude_in_Chrome__get_page_text` or any Chrome tool. If it works: "Chrome connected — I can browse, read pages, and pull content from the web." If it fails: "Chrome MCP isn't connected. To set it up: install the Claude-in-Chrome extension from the Chrome Web Store, then add it to your Claude Code MCP config. Full instructions: https://github.com/Simeon92/personal-os. This powers web research, reading articles, and pulling content directly into your work."
+Check if the Claude-in-Chrome MCP is available by attempting to call `mcp__Claude_in_Chrome__get_page_text` or any Chrome tool. If it works: "Chrome connected — I can browse, read pages, and pull content from the web." If it fails: "Chrome isn't connected. First install the Claude-in-Chrome extension from the Chrome Web Store, then go to **Settings → Connectors** in Claude Desktop and add Claude in Chrome. Restart Claude Desktop when done — this is the most important integration to have running."
 
 **Do not block onboarding on failed integrations.** Note what's missing and continue. The system works without them — it's just less powerful.
 

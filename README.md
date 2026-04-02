@@ -93,30 +93,24 @@ Set up whichever integrations apply to you — see the **Integrations** section 
 
 ## Integrations
 
+All integrations are set up through Claude Desktop's built-in connectors — no config file editing required.
+
+1. Open Claude Desktop
+2. Go to **Settings → Connectors**
+3. Search for and add the ones you need
+
 ### Chrome (web research) — recommended for everyone
 Lets Claude browse the web, read articles, and pull content directly into your sessions.
 
-1. Open Chrome and install the [Claude-in-Chrome extension](https://chromewebstore.google.com/detail/claude-ai-chrome-extensio/ndeejgokieklaealoikgdmbmjdkmaoco)
-2. In Claude Desktop settings, add this to your MCP config:
-
-```json
-{
-  "mcpServers": {
-    "Claude_in_Chrome": {
-      "command": "npx",
-      "args": ["-y", "claude-in-chrome-mcp"]
-    }
-  }
-}
-```
-
-3. Restart Claude Desktop.
+1. Install the [Claude-in-Chrome extension](https://chromewebstore.google.com/detail/claude-ai-chrome-extensio/ndeejgokieklaealoikgdmbmjdkmaoco) in Chrome
+2. In Claude Desktop, go to **Settings → Connectors** and add **Claude in Chrome**
+3. Restart Claude Desktop
 
 ### Asana (tasks)
-Lets Claude create, update, and complete tasks directly from conversation. Full instructions: https://github.com/roychri/mcp-server-asana
+Lets Claude create, update, and complete tasks directly from conversation. In Claude Desktop, go to **Settings → Connectors** and search for **Asana**.
 
 ### Jira (projects and sprints)
-Lets Claude reference sprint status and project context during retros and planning. Full instructions: https://github.com/sooperset/mcp-atlassian
+Lets Claude reference sprint status and project context during retros and planning. In Claude Desktop, go to **Settings → Connectors** and search for **Jira** or **Atlassian**.
 
 ### Outlook Calendar
 No extra setup required. During onboarding, you'll be asked for your Outlook calendar URL — just open Outlook in Chrome and copy the address bar. The morning briefing reads your calendar directly from the browser each day.
